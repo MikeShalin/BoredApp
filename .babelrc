@@ -1,0 +1,15 @@
+{
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "Features": "./src/features",
+        "Utils": "./src/utils",
+        "Types": "./src/types",
+        "Models": "./src/models",
+        "Style": "./src/style",
+        "underscore": "lodash"
+      }
+    }]
+  ]
+}

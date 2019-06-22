@@ -1,0 +1,1 @@
+export const API_ROOT = 'http://www.boredapi.com/api/activity'
