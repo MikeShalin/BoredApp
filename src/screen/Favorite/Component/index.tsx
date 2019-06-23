@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { Grid, Row, Text } from 'native-base'
 
-export const Favorite = () => (
+export const Favorite = ({ data }) => (
   <Grid style={{ flex: 4 }}>
-      <Row style={{ flex: 1 }}>
-          <Text>lol</Text>
-      </Row>
+    <Text>
+      lol
+    </Text>
   </Grid>
 )
 

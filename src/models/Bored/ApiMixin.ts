@@ -29,6 +29,7 @@ export const ApiMixin = types
       self.setSuccess(false)
       //@ts-ignore
       self.setError(error.toString())
+      //todo описать экшен если ответ вернул data: error, для этого нужно выставить все фильтры
     },
 
     getActivity() {
