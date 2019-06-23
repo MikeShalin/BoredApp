@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Form, Icon, Text } from 'native-base'
+import { Form } from 'native-base'
 
 import { ActivityDropdown } from 'Features/ActivityDropdown/Component'
 import { mobxInjected } from 'Utils/helpers'
@@ -22,9 +22,8 @@ interface TProps {
   }
 }
 
-const SearchBox = ({ searchFilters: { setFilter, ...searchFilters } }: TProps) => (
+const SearchBox = ({ searchFilters: { setFilter } }: TProps) => (
   <>
-    {console.log('\n\n\nlolsearchFilters', searchFilters)}
     <Form>
       <ActivityDropdown setFilter={setFilter} name='accessibility' />
       <ActivityDropdown setFilter={setFilter} name='participants' />
@@ -34,4 +33,4 @@ const SearchBox = ({ searchFilters: { setFilter, ...searchFilters } }: TProps) =
   </>
 )
 
-export const SearchBoxInjected = mobxInjected( 'searchFilters')(SearchBox)
+export const SearchBoxInjected = mobxInjected('searchFilters')(SearchBox)

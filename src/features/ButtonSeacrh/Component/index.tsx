@@ -1,9 +1,8 @@
 import React from 'react'
-import { Button, Icon, Text } from 'native-base'
 
 import { mobxInjected } from 'Utils/helpers'
 import { Result } from 'Types/.'
-import { Style } from 'Style/Button'
+import { ButtonMainEnhancer as ButtonMain } from 'Features/ButtonMain/Component'
 
 interface TProps {
   boredStore: {
@@ -11,24 +10,12 @@ interface TProps {
     result: Result;
     isFetching: boolean;
   },
-  style: {
-    justifyContent: 'center';
-    width: '100%' ;
-    height: 80;
-  }
 }
 
-const ButtonSeacrh = ({ boredStore: { getActivity }, style }: TProps) => (
-  <Button
-    info
-    rounded
-    large
-    onPress={getActivity}
-    style={style}
-  >
-    <Text>Get activity</Text>
-    <Icon name='bicycle' />
-  </Button>
+const ButtonSeacrh = ({ boredStore: { getActivity }}: TProps) => (
+  <ButtonMain onHandler={getActivity} icon='bicycle' info>
+    Get activity
+  </ButtonMain>
 )
 
-export const ButtonSeacrhInjected = Style(mobxInjected('boredStore', 'searchFilters')(ButtonSeacrh))
+export const ButtonSeacrhInjected = mobxInjected('boredStore', 'searchFilters')(ButtonSeacrh)

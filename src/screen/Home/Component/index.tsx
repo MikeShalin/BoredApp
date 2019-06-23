@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react'
-import { Spinner, Button, Icon, View, Row, Col, Grid } from 'native-base'
+import React from 'react'
+import { Spinner, Row, Grid } from 'native-base'
 
 import { ActivityCardWrapper } from 'Features/ActivityCardWrapper/Component'
 import { SearchBoxInjected as SearchBox } from 'Features/SearchBox/Component'
 import { ButtonSeacrhInjected as ButtonSeacrh } from 'Features/ButtonSeacrh/Component'
 import { ButtonResetResultInjected as ButtonResetResult } from 'Features/ButtonResetResult/Component'
+import { ButtonAddFavorite } from 'Features/ButtonAddFavorite/Component'
 import { mobxInjected } from 'Utils/helpers'
 import { Result } from 'Types/.'
 
@@ -21,29 +22,24 @@ const Screen = ({ boredStore }: TProps) => {
   return (
     <Grid style={{ flex: 4 }}>
       <Row style={{ flex: 2 }}>
-      {
-        boredStore.result
-          ? (
-              <ActivityCardWrapper {...boredStore.result} />
-          )
-          : (
-            <SearchBox />
-          )
-      }
+        {
+          boredStore.result
+            ? <ActivityCardWrapper {...boredStore.result} />
+            : <SearchBox />
+        }
       </Row>
       <Row style={{ flex: 1 }}>
         {
           boredStore.result
-            ? (
-              <ButtonResetResult/>
-            )
-            : (
-              <ButtonSeacrh/>
-            )
+            ? <ButtonResetResult />
+            : <ButtonSeacrh />
         }
+      </Row>
+      <Row style={{ flex: 1 }}>
+        {boredStore.result && <ButtonAddFavorite />}
       </Row>
     </Grid>
   )
 }
 
-export const Home = mobxInjected('boredStore' )(Screen)
+export const Home = mobxInjected('boredStore')(Screen)
