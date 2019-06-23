@@ -21,7 +21,8 @@
       "Utils/*": ["./src/utils/*"],
       "Types/*": ["./src/types/*"],
       "Config/*": ["./src/config/*"],
-      "Style/*": ["./src/style/*"]
+      "Style/*": ["./src/style/*"],
+      "Screen/*": ["./src/screen/*"]
     }
   },
   "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]

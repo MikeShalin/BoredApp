@@ -1,3 +1,4 @@
+// @ts-ignore
 import { compose, defaultProps } from 'recompose'
 
 export const Style = compose(

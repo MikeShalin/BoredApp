@@ -8,6 +8,7 @@
         "Types": "./src/types",
         "Models": "./src/models",
         "Style": "./src/style",
+        "Screen": "./src/screen",
         "underscore": "lodash"
       }
     }]

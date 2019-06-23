@@ -8,5 +8,6 @@ module.exports = {
     '^Features(.*)$': '<rootDir>/src/features$1',
     '^Utils(.*)$': '<rootDir>/src/utils$1',
     '^Config(.*)$': '<rootDir>/src/config$1',
+    '^Screen(.*)$': '<rootDir>/src/screen$1',
   },
 }

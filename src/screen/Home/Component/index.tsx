@@ -46,4 +46,4 @@ const Screen = ({ boredStore }: TProps) => {
   )
 }
 
-export const HomeScreen = mobxInjected('boredStore' )(Screen)
+export const Home = mobxInjected('boredStore' )(Screen)

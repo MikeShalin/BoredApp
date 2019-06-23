@@ -7,16 +7,19 @@ import { Header } from 'Features/Header/Component'
 import { Footer } from 'Features/Footer/Component'
 import { RootModel as stores } from 'Models/.'
 
-export const App = () => (
-  <Provider {...stores}>
-    <Container>
-      <Header>
-        Bored App
-      </Header>
-    <Navigation />
-      <Footer/>
-    </Container>
-  </Provider>
-)
-
-
+export const App = () => {
+  const nav = React.createRef()
+  return  (
+    <Provider {...stores}>
+      <Container>
+        <Header>
+          Bored App
+        </Header>
+        {/*
+         // @ts-ignore */}
+        <Navigation ref={nav}/>
+        <Footer navigation={nav}/>
+      </Container>
+    </Provider>
+  )
+}
