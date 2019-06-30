@@ -24,14 +24,8 @@ export const callApi = ({
     },
   }
   return getResult(url, { ...config, Headers })
-    .then((json: {}) => {
-      console.log('\n\n\nthen', json)
-      onSuccess(json)
-    })
-    .catch((error: Error) => {
-      console.log('\n\n\ncatch', error)
-      onError(error.toString())
-    })
+    .then((json: {}) => onSuccess(json))
+    .catch((error: Error) => onError(error.toString()))
 }
 
 export const getResult = (url: string, config: {}) => (

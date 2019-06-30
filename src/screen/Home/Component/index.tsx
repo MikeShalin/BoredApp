@@ -5,7 +5,6 @@ import { ActivityCardWrapper } from 'Features/ActivityCardWrapper/Component'
 import { SearchBoxInjected as SearchBox } from 'Features/SearchBox/Component'
 import { ButtonSeacrhInjected as ButtonSeacrh } from 'Features/ButtonSeacrh/Component'
 import { ButtonResetResultInjected as ButtonResetResult } from 'Features/ButtonResetResult/Component'
-import { ButtonAddFavorite } from 'Features/ButtonAddFavorite/Component'
 import { mobxInjected } from 'Utils/helpers'
 import { Result } from 'Types/.'
 
@@ -17,7 +16,7 @@ interface TProps {
   },
 }
 
-const Screen = ({ boredStore }: TProps) => {
+const HomeScreen = ({ boredStore }: TProps) => {
   if (boredStore.isFetching) return <Spinner color='blue' />
   return (
     <Grid style={{ flex: 4 }}>
@@ -35,11 +34,8 @@ const Screen = ({ boredStore }: TProps) => {
             : <ButtonSeacrh />
         }
       </Row>
-      <Row style={{ flex: 1 }}>
-        {boredStore.result && <ButtonAddFavorite />}
-      </Row>
     </Grid>
   )
 }
 
-export const Home = mobxInjected('boredStore')(Screen)
+export const Home = mobxInjected('boredStore')(HomeScreen)

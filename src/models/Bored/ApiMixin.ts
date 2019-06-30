@@ -29,17 +29,14 @@ export const ApiMixin = types
       self.setSuccess(false)
       //@ts-ignore
       self.setError(error.toString())
-      //todo описать экшен если ответ вернул data: error, для этого нужно выставить все фильтры
     },
 
     getActivity() {
 
-      const url = `${API_ROOT}`
-
       const filters = toJS(getRoot(self).searchFilters)
 
-      return callApi({
-        url,
+      callApi({
+        url: API_ROOT,
         config: {
           params: { ...filters },
         },

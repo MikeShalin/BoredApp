@@ -2,12 +2,8 @@ import React from 'react'
 import { createStackNavigator, createAppContainer } from 'react-navigation'
 
 import { Home } from 'Screen/Home/Component'
-import { Favorite } from 'Screen/Favorite/Component'
 
-const AppNavigator = createStackNavigator({
-    Home: { screen: Home },
-    Favorite: { screen: Favorite },
-  }, {
+const AppNavigator = createStackNavigator({ Home }, {
     initialRouteName: 'Home',
     headerMode: 'none',
   },
